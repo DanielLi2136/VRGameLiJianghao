@@ -19,21 +19,10 @@ public class ArrowController : MonoBehaviour
     {
         MidPointVisualObject.SetActive(false);
 
-        GameObject Arrow = Instantiate(arrowPrefab);
-        Arrow.transform.position = arrowSpawnPoint.transform.position;
-        Arrow.transform.rotation = MidPointVisualObject.transform.rotation;
-        Rigidbody rb = Arrow.GetComponent<Rigidbody>();
-        rb.AddForce(MidPointVisualObject.transform.forward * strength * arrowMaxSpeed, ForceMode.Impulse);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        //GameObject Arrow = Instantiate(arrowPrefab);
+        //Arrow.transform.position = arrowSpawnPoint.transform.position;
+        //Arrow.transform.rotation = MidPointVisualObject.transform.rotation;
+        //Rigidbody rb = Arrow.GetComponent<Rigidbody>();
+        //rb.AddForce(MidPointVisualObject.transform.forward * strength * arrowMaxSpeed, ForceMode.Impulse);
     }
 }

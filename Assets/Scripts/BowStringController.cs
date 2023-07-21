@@ -15,7 +15,7 @@ public class BowStringController : MonoBehaviour
     private Transform GrabPoint, MidPointVisualObject, MidPointParent;
 
     [SerializeField]
-    private float BowStringStretchLimit = 0.3f;
+    private float BowStringStretchLimit = 0.01f;
 
     private Transform Interactor;
 
@@ -37,6 +37,7 @@ public class BowStringController : MonoBehaviour
 
     private void ResetBowString(SelectExitEventArgs arg0)
     {
+        
         OnBowReleased?.Invoke(Strength);
         Strength = 0;
 
@@ -60,7 +61,7 @@ public class BowStringController : MonoBehaviour
             Vector3 MidPointLocalSpace =
                 MidPointParent.InverseTransformPoint(GrabPoint.position);
 
-            float MidPointLocalZAbs = Mathf.Abs(MidPointLocalSpace.z);
+            float MidPointLocalZAbs = Mathf.Abs(MidPointLocalSpace.x);
 
             HandleStringPushedBackToStart(MidPointLocalSpace);
 
@@ -74,10 +75,10 @@ public class BowStringController : MonoBehaviour
 
     private void HandlePullingString(float midPointLocalZAbs, Vector3 midPointLocalSpace)
     {
-        if (midPointLocalSpace.z < 0 && midPointLocalZAbs < BowStringStretchLimit)
+        if (midPointLocalSpace.x < 0f && midPointLocalZAbs < BowStringStretchLimit)
         {
             Strength = Remap(midPointLocalZAbs, 0, BowStringStretchLimit, 0, 1);
-            MidPointVisualObject.localPosition = new Vector3(0, 0, midPointLocalSpace.z);
+            MidPointVisualObject.localPosition = new Vector3(midPointLocalSpace.x, 0, 0);
         }
     }
 
@@ -88,16 +89,16 @@ public class BowStringController : MonoBehaviour
 
     private void HandleStringPulledBackToLimit(float midPointLocalZAbs, Vector3 midPointLocalSpace)
     {
-        if (midPointLocalSpace.z < 0 && midPointLocalZAbs >= BowStringStretchLimit)
+        if (midPointLocalSpace.x < 0f && midPointLocalZAbs >= BowStringStretchLimit)
         {
             Strength = 1;
-            MidPointVisualObject.localPosition = new Vector3(0, 0, -BowStringStretchLimit);
+            MidPointVisualObject.localPosition = new Vector3(-BowStringStretchLimit, 0, 0);
         }
     }
 
     private void HandleStringPushedBackToStart(Vector3 midPointLocalSpace)
     {
-        if (midPointLocalSpace.z >= 0)
+        if (midPointLocalSpace.x >= 0f)
         {
             Strength = 0;
             MidPointVisualObject.localPosition = Vector3.zero;
