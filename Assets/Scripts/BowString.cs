@@ -9,7 +9,6 @@ public class BowString : MonoBehaviour
     [SerializeField]
     private Transform End1, End2;
     private LineRenderer lineRenderer;
-    // Start is called before the first frame update
 
     private void Awake()
     {
@@ -33,6 +32,4 @@ public class BowString : MonoBehaviour
         lineRenderer.positionCount = LinePoints.Length;
         lineRenderer.SetPositions(LinePoints);
     }
-    // Update is called once per frame
- 
 }
