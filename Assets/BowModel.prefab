@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MidPointVisualObject: {fileID: 2222274103941680581}
-  arrowPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 5364487614514606504, guid: eb3c7b7ba811a074bb0fb37c88ce3ae4, type: 3}
   arrowSpawnPoint: {fileID: 2222274102229492182}
   arrowMaxSpeed: 10
 --- !u!1 &1661026831597687506

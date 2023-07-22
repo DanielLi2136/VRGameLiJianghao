@@ -9,18 +9,7 @@ public class ArrorRotation : MonoBehaviour
 
     private void FixedUpdate()
     {
-       transform.forward =
-            Vector3.Slerp(transform.forward, Rb.velocity.normalized, Time.fixedDeltaTime);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+       transform.right =
+            Vector3.Slerp(transform.right, Rb.velocity.normalized, Time.fixedDeltaTime);
     }
 }

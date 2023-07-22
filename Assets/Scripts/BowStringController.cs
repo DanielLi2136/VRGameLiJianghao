@@ -28,7 +28,7 @@ public class BowStringController : MonoBehaviour
     {
         Interactable = GrabPoint.GetComponent<XRGrabInteractable>();
     }
-    // Start is called before the first frame update
+
     private void Start()
     {
         Interactable.selectEntered.AddListener(PrepareBowString);
@@ -37,7 +37,6 @@ public class BowStringController : MonoBehaviour
 
     private void ResetBowString(SelectExitEventArgs arg0)
     {
-        
         OnBowReleased?.Invoke(Strength);
         Strength = 0;
 
@@ -53,7 +52,6 @@ public class BowStringController : MonoBehaviour
         onBowPulled?.Invoke();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (Interactor != null)
