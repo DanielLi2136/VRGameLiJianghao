@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/Global Volume.prefab.meta
 guid: e8b34405873f54d48b0030db50fa2661
+========
+guid: 36ebec41ffae0ae41a8f3f8ae7226d18
+>>>>>>>> Stashed changes:Assets/BowModel.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
