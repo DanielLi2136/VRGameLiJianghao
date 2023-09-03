@@ -12,7 +12,7 @@ public class ArrowHead : MonoBehaviour
         {
             //play dead animation
             //play vfx and sfx
-            hitsfx.Play();
+            //hitsfx.Play();
             Instantiate(deathvfx, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
         }
